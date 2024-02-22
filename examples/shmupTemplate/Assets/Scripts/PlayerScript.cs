@@ -8,10 +8,7 @@ public class PlayerScript : MonoBehaviour {
     public float yPos = 0;
 
     public float speed = 5f;
-    
-    public float score = 0;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,19 +18,19 @@ public class PlayerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow)){
+        if(Input.GetKey(KeyCode.A)){
             xPos = -1f;
         }
 
-        if(Input.GetKey(KeyCode.RightArrow)){
+        if(Input.GetKey(KeyCode.D)){
             xPos = +1f;
         }
 
-        if(Input.GetKey(KeyCode.DownArrow)){
+        if(Input.GetKey(KeyCode.S)){
             yPos = -1f;
         }
 
-        if (Input.GetKey(KeyCode.UpArrow)){
+        if (Input.GetKey(KeyCode.W)){
             yPos = +1f;
         }
 
