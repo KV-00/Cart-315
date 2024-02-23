@@ -17,7 +17,7 @@ public class EnemyManager : MonoBehaviour
     }
 
     private IEnumerator EnemySpawn() {
-        float x = Random.Range(-3.5f,3.5f);
+        float x = Random.Range(-7.5f,7.5f);
         Instantiate(enemy, new Vector3(x, 6, 0), Quaternion.identity);
 
         yield return new WaitForSeconds(1.5f);

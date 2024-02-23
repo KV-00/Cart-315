@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84178542994ba4f37a8c72749014c8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletVelocity: 5
+  bulletVelocity: 10
   tongue: {fileID: 8137786542068053320, guid: dfa216fc9d967443cbe12a530c009489, type: 3}
   tongue1: {fileID: 8137786542068053320, guid: dfa216fc9d967443cbe12a530c009489, type: 3}
   mush: {fileID: 4787477003119028551, guid: 393cfc4cef50a44c4bce06c3a42e2cc7, type: 3}

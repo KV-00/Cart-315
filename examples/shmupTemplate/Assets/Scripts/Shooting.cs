@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-public float bulletVelocity = 10f;
+public float bulletVelocity;
 public GameObject tongue;
 public GameObject tongue1;
 public GameObject mush;
@@ -32,6 +32,8 @@ void Update () {
 
         tongue.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
         }
+    if (Input.GetMouseButtonDown(1))
+    {
         if (mouthFull == true)
         {
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -46,5 +48,6 @@ void Update () {
 
         mush.GetComponent<Rigidbody2D>().velocity = direction * bulletVelocity;
         }
+     }
     }
 }
