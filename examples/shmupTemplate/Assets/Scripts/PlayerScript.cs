@@ -9,37 +9,32 @@ public class PlayerScript : MonoBehaviour {
 
     public float speed = 5f;
 
+    Rigidbody2D rb;
+
+    [SerializeField]
+    private Animator fireAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         sr = this.GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.A)){
-            xPos = -1f;
-        }
+        fireAnim.SetFloat("yAxis", yPos);
 
-        if(Input.GetKey(KeyCode.D)){
-            xPos = +1f;
-        }
+        xPos = Input.GetAxis("Horizontal");
+        yPos = Input.GetAxis("Vertical");
 
-        if(Input.GetKey(KeyCode.S)){
-            yPos = -1f;
-        }
+    }
 
-        if (Input.GetKey(KeyCode.W)){
-            yPos = +1f;
-        }
-
-        Vector3 movementDirection = new Vector3(xPos, yPos, transform.position.z).normalized;
-        transform.position += movementDirection * speed * Time.deltaTime;
-
-        xPos = 0;
-        yPos = 0;
-
+    private void FixedUpdate()
+    {
+        rb.velocity += new Vector2(xPos, yPos) * speed * Time.fixedDeltaTime;
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
     }
 }
 

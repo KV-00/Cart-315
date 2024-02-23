@@ -5,13 +5,19 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
- public Text scoreText;
+ public TMPro.TMP_Text scoreText;
  public int score;
 
- public static ScoreScript S;
+    private static ScoreScript instance;
+    public static ScoreScript Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindAnyObjectByType<ScoreScript>();
 
-    void Awake() {
-        S = this;
+            return instance;
+        }
     }
     
     void Start()
