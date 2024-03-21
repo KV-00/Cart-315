@@ -5,19 +5,12 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
- public TMPro.TMP_Text scoreText;
- public int score;
-
-    private static ScoreScript instance;
-    public static ScoreScript Instance
+    public TMPro.TMP_Text scoreText;
+    public int score;
+    public static ScoreScript instance;
+    void Awake()
     {
-        get
-        {
-            if (instance == null)
-                instance = FindAnyObjectByType<ScoreScript>();
-
-            return instance;
-        }
+        instance = this;
     }
     
     void Start()
@@ -33,9 +26,10 @@ public class ScoreScript : MonoBehaviour
         }
     }
 
-public void UpdateScore() {
+    public void UpdateScore() {
         score += 100;
         string scoreDisplay = "Score: " + score.ToString();
         scoreText.text = scoreDisplay;
     }
 }
+

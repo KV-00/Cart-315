@@ -18,7 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (collision.collider.name.ToLower().Contains("mush"))
         {
-            ScoreScript.Instance.UpdateScore();
+            ScoreScript.instance.UpdateScore();
             Destroy(collision.collider.gameObject);
             Destroy(this.gameObject);
         }
